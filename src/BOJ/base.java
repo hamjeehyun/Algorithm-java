@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class base {
-    static boj_7795.FastReader scan = new boj_7795.FastReader();
+    static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) {
@@ -34,6 +34,16 @@ public class base {
 
         int nextInt() {
             return Integer.parseInt(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
         }
     }
 }
