@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class boj_1919 {
     static int[] getCount(String str) {
         int count[] = new int[26];
-        int[] countB = new int[26];
 
         for (int i = 0; i < str.length(); i++)
             count[str.charAt(i) - 'a']++;
