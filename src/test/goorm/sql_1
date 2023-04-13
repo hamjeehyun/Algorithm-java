@@ -1,0 +1,7 @@
+SELECT emp.seq as emp_seq,
+       emp.name as emp_name,
+       ifnull(dept.name, "(발령 전)") as dept_name
+FROM emp
+         left join dept
+                   on emp.dept_seq = dept.seq
+order by emp.seq ASC;

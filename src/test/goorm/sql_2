@@ -1,0 +1,8 @@
+select count(base.품목) as 품목수
+from (
+         SELECT distinct 주문.품목명 as 품목
+         FROM 주문
+         where 주문.주문자명 = '홍길동'
+           and 주문.주문일자 like '2019%'
+         group by 주문.품목명
+     ) as base

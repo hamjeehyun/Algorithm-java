@@ -1,0 +1,14 @@
+select base.담당자명 as 담당자명, base.총주문금액 as 총주문금액
+from (
+         select 담당자.담당자명 as 담당자명, sum(주문.주문수량 * 품목.단가) as 총주문금액
+         from 주문
+                  join 품목
+                       on 주문.품목ID = 품목.품목ID
+                  join 담당자
+                       on 품목.담당자ID = 담당자.담당자ID
+         where 주문.주문일자 like '202001%'
+         group by 담당자.담당자명
+     ) as base
+where base.총주문금액 >= 10000000
+
+
